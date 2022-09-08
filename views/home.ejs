@@ -1,0 +1,33 @@
+<%- include('./partials/header'); -%> <%- include('./partials/navigation-bar');
+-%>
+<section>
+  <div class="post-container">
+    <div class="posts-content">
+      <%posts[0] && posts[0].forEach((post,i)=>{%>
+      <div class="post-box other-user-post-box">
+        <a
+          href="/user/profile/<%=post.username%>"
+          class="username-profile inline"
+        >
+          <div class="profile">
+            <img src="./images/default-user-profile.jpg" alt="" />
+          </div>
+          <div class="other-user-name">
+            <h3><%= post.username %></h3>
+          </div>
+        </a>
+        <div class="post-title">
+          <h3><%=post.title %></h3>
+        </div>
+        <div class="post-body-content"><%=post.bodyContent %></div>
+        <div class="post-likes">
+          <input type="hidden" class="liked-user-id" name="<%=post._id%>" />
+          <i class="<%= postLikeClass[i]%> fa-heart like-btn"></i>
+          <span><%= post.likes.length %></span>
+        </div>
+      </div>
+      <%})%>
+    </div>
+  </div>
+</section>
+<%- include('./partials/footer'); -%>

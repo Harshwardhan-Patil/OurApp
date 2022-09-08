@@ -1,0 +1,52 @@
+<%- include('./partials/header'); -%> 
+<%- include('./partials/navigation-bar');-%>
+<section id="profile">
+  <div class="profile-brief-detail inline">
+    <div class="profile-pic">
+      <img src="/images/default-user-profile.jpg" alt="" />
+    </div>
+    <div class="user-text-details">
+      <div class="username">
+        <h2><%= username %></h2>
+      </div>
+      <div class="following-post-follower-count">
+        <span class="small-details"><%= posts.length %> Posts</span>
+        <a href="/profile/followers" class="small-details"
+          ><%= followersCount %> Followers</a
+        >
+        <a href="/profile/followings" class="small-details"
+          ><%=followingCount %> Following</a
+        >
+      </div>
+    </div>
+  </div>
+  <hr class="profile-line" />
+  <div class="posts">
+    <div class="post-heading">
+      <h3>Posts</h3>
+    </div>
+    <div class="posts-content">
+      <%posts.forEach((post,i)=>{%>
+      <div class="post-box">
+        <div class="post-setting">
+          <span>...</span>
+          <div class="setting-option disappear">
+            <a href="/delete/<%=post._id%>">Delete</a>
+          </div>
+        </div>
+        <div class="post-title">
+          <h3><%=post.title%></h3>
+        </div>
+        <div class="post-body-content"><%=post.bodyContent %></div>
+        <div class="post-likes">
+          <input type="hidden" class="liked-user-id" name="<%=post._id%>" />
+          <i class="<%= postLikeClass[i]%> fa-heart like-btn"></i>
+          <span><%= post.likes.length %></span>
+        </div>
+      </div>
+      <%})%>
+    </div>
+  </div>
+</section>
+<script src="/js/profilePageFollow.js"></script>
+<%- include('./partials/footer'); -%>

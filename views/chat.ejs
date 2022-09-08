@@ -1,0 +1,79 @@
+<%- include('./partials/header'); -%> 
+<%- include('./partials/navigation-bar');-%>
+
+<section id="message">
+  <div class="container inline">
+    <div class="searchUser">
+      <div class="your-user-name">
+        <h2><%= user.username %></h2>
+        <input type="hidden" class="mainUserId" name="<%=user.id%>">
+      </div>
+      <div class="user-search">
+        <form action="" method="post">
+          <div class="chat-search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search..." name="inbox-search" onkeyup="sendData(this)" />
+            <div class="inbox-search-result"></div>
+          </div>
+        </form>
+      </div>
+      <div class="previous-talked-users">
+        <% usersInfo.forEach((user,i)=>{%>
+          <a href="/direct/<%=user._id%>" class="user-brief inline">
+            <input type="hidden" class="otherUserId" name="<%= user._id%>">
+            <input type="hidden" class="connectionId" name="<%= connection[i]._id%>">
+            <div class="o-user-profile">
+              <img src="/images/default-user-profile.jpg" alt="" />
+            </div>
+            <div class="o-user-name"><span><%= user.username %></span></div>
+          </a>
+        <%})%> 
+      </div>
+    </div>
+    <div class="chat-section">
+      <div style="display:<%= chatClass.defaultMessage %>;" class="send-message-design" >
+        <div class="inbox-img">
+          <img src="/images/inbox-bg.jpg" alt="">
+        </div>
+        <h2>Your Messages</h2>
+        <p>Send private Messages to your friends</p>
+      </div>
+      <div style="display:<%= chatClass.chat %>;" class="message-sec" >
+        <div class="other-users-brief-details inline">
+          <div class="profile">
+            <img src="/images/default-user-profile.jpg" alt="" />
+          </div>
+          <div class="other-user-name">
+            <h3><%= endUser %></h3>
+          </div>
+        </div>
+        <div class="chat-view">
+          <% messages.forEach((message)=>{%>
+              <% if(message.sender === user.id){%>
+                <div class="my-messages">
+                  <span><%= message.message %></span>
+              </div>
+              <%}else{%>
+                <div class="user-messages">
+                  <span><%= message.message %></span>
+              </div>
+              <%}%>
+          <%})%>
+        </div>
+        <div class="send-message-bar">
+          <div class="send-message inline">
+            <div class="message-bar">
+              <input type="text" name="message" placeholder="Message..." />
+            </div>
+            <div class="send-btn">
+              <input type="submit" value="Send" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script src="/js/inboxPage.js"></script>
+<%- include('./partials/footer'); -%>

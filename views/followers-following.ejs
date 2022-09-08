@@ -1,0 +1,43 @@
+<%- include('./partials/header'); -%> <%-
+include('./partials/navigation-bar');-%>
+<section id="followersAndFollowing">
+  <div class="f-profile-pic">
+    <img src="/images/default-user-profile.jpg" alt="" />
+  </div>
+  <hr class="profile-line" />
+  <div class="show-following-followers inline">
+    <div class="follower-following-main-heading inline">
+      <a href="/profile/followers" class="followers-title">
+        <h4>Followers</h4>
+      </a>
+      <a href="/profile/followings" class="followings-title">
+        <h4>Following</h4>
+      </a>
+    </div>
+    <div class="followers-following-content">
+      <%follows.forEach((follow)=>{ %>
+      <div class="user-brief-detail inline">
+        <a href="/user/profile/<%=follow.username%>" class="user-profile-and-name inline">
+          <div class="user-profile">
+            <img src="/images/default-user-profile.jpg" alt="" />
+          </div>
+          <div class="user-name">
+            <span><%=follow.username%></span>
+          </div>
+        </a>
+        <div class="follow-unfollow-btn">
+          <input
+            type="submit"
+            name="xyz223"
+            value="<%=follow.value %>"
+            class="<%=follow.class %>"
+          />
+        </div>
+      </div>
+
+      <%})%>
+    </div>
+  </div>
+</section>
+<script src="/js/followPage.js"></script>
+<%- include('./partials/footer'); -%>
