@@ -19,7 +19,7 @@ const mainRoutes = require("./routes/mainRoute");
 const authRoutes = require("./routes/authRoute");
 
 /**
- * @desc Store the users Id and their Socket Id when they establish connection 
+ * @desc Store the users Id and their Socket Id when they establish connection
  */
 let userIdAndSocketId = [];
 
@@ -55,7 +55,6 @@ app.set("view engine", "ejs");
 const io = socketIo(server);
 
 io.on("connection", (socket) => {
-
   //on user connect
   socket.on("connectUser", (userId) => {
     userIdAndSocketId.push({ socketId: socket.id, userId });
@@ -93,5 +92,7 @@ io.on("connection", (socket) => {
  */
 app.use(mainRoutes);
 app.use(authRoutes);
-
+app.get("*", (req, res) => {
+  res.render("404.ejs");
+});
 server.listen(port, () => console.log(`Server is running on port ${port}`));

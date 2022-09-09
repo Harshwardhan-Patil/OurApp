@@ -1,41 +1,47 @@
-body{
+body {
     padding: 0;
     margin: 0;
     font-family: 'Halant', serif;
 }
 
-:root{
+:root {
     --PURPLE: #6C63FF;
-    --BLACK :#14171A;
-    --GRAY : #657786;
+    --BLACK: #14171A;
+    --GRAY: #657786;
     --LIGHT-GRAY: #ADADAD;
-    --WHITE : #FFFF;
+    --WHITE: #FFFF;
     --INPUT-BOX-BACKGROUND: #edf7fdd9;
     --HORIZONTAL-LINE: #b5b5b5;
 }
 
-h1,h2,h3,h4,h5,h6,p{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     margin: 0;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
 
-.inline{
+.inline {
     display: flex;
 }
 
 /* ---------------------------- */
-       /* Sign Up page  */
+/* Sign Up page  */
 /* ---------------------------- */
 
-.signIn-signUp-page{
+.signIn-signUp-page {
     justify-content: space-around;
     align-items: center;
     height: 100vh;
@@ -43,7 +49,7 @@ a{
     padding: 0 2em;
 }
 
-.signIn-signUp-container{
+.signIn-signUp-container {
     background-color: var(--WHITE);
     box-shadow: 2px 4px 8px #ccc;
     border-radius: 30px;
@@ -53,53 +59,55 @@ a{
     justify-content: space-between;
 }
 
-.sign-heading-text h1,.sign-heading-text p{
+.sign-heading-text h1,
+.sign-heading-text p {
     margin: 0;
 }
 
-.sign-heading-text h1{
+.sign-heading-text h1 {
     font-size: 3rem;
     margin-bottom: -10px;
 }
 
-.sign-heading-text p{
+.sign-heading-text p {
     font-size: 0.875rem;
     opacity: .785;
     margin-left: .5em;
 }
 
-.google-facebook-box{
+.google-facebook-box {
     margin-top: 2.5em;
     gap: 1.1em;
     width: inherit;
 }
 
-.oAuth-btn{
+.oAuth-btn {
     padding: .4em .5em;
     border: 2px solid var(--LIGHT-GRAY);
     border-radius: 12px;
     font-weight: 600;
     transition: background 200ms ease-in,
-                color 200ms ease-in;
+        color 200ms ease-in;
 }
 
-.oAuth-btn:hover{
+.oAuth-btn:hover {
     color: var(--WHITE);
     background-color: var(--PURPLE);
     border-color: var(--PURPLE);
 }
 
-.oAuth-btn:hover i{
+.oAuth-btn:hover i {
     color: var(--WHITE);
 }
-.oAuth-btn i{
+
+.oAuth-btn i {
     margin-right: .2em;
     color: var(--PURPLE);
     font-size: 1.2rem;
     transition: color 200ms ease-in;
 }
 
-hr.sign-line{
+hr.sign-line {
     border: none;
     border-top: 1px solid var(--HORIZONTAL-LINE);
     width: 100px;
@@ -107,10 +115,11 @@ hr.sign-line{
 }
 
 
-.label-input label{
+.label-input label {
     font-weight: 600;
 }
-.label-input input{
+
+.label-input input {
     border: 2px solid #ADADAD;
     border-radius: 8px;
     padding: .6em .8em;
@@ -119,59 +128,59 @@ hr.sign-line{
     box-sizing: border-box;
 }
 
-.label-input input:focus-visible{
+.label-input input:focus-visible {
     outline: none;
     background-color: #f0f0f0;
 }
 
-.label-input{
+.label-input {
     width: 100%;
-    
+
 }
 
 
-.label-input .error{
+.label-input .error {
     padding: 0 .5em;
     margin-top: .2em;
     width: 400px;
     box-sizing: border-box;
 }
 
-.error > span{
+.error>span {
     font-weight: 600;
     letter-spacing: 0px;
     color: red;
     font-size: 13px;
 }
 
-.error svg{
+.error svg {
     width: 12px;
 }
 
-.disappear{
+.disappear {
     display: none;
 }
 
-.appear{
+.appear {
     display: block;
 }
 
-.inline > .label-input{
+.inline>.label-input {
     margin-bottom: 1em;
     margin-right: 1.5em;
     width: 185px;
-} 
+}
 
-.form > .label-input{
+.form>.label-input {
     width: 94%;
     margin-bottom: 2em;
 }
 
-.label-input label{
+.label-input label {
     display: block;
 }
 
-.create-logUp-logIn-btn{
+.create-logUp-logIn-btn {
     padding: 1em 1.4em;
     background-color: var(--PURPLE);
     color: var(--WHITE);
@@ -185,25 +194,26 @@ hr.sign-line{
     transition: background 200ms ease-in;
 }
 
-.create-logUp-logIn-btn:hover{
+.create-logUp-logIn-btn:hover {
     background-color: hsl(243, 100%, 66%);
 }
 
-.form .accq{
+.form .accq {
     font-size: .875rem;
     font-weight: 700;
     margin-left: .5em;
     letter-spacing: .8px;
 }
 
-.form .accq a{
+.form .accq a {
     color: var(--PURPLE);
 }
-.form .accq a:hover{
+
+.form .accq a:hover {
     color: #657786;
 }
 
-.server-error-message{
+.server-error-message {
     background-color: hsl(0, 100%, 94%);
     text-align: center;
     padding: .6em 1.5em;
@@ -215,28 +225,29 @@ hr.sign-line{
     color: hsl(0, 100%, 50%);
     border-radius: 8px;
     font-weight: 600;
-    animation:error-box 250ms ease-in-out;
+    animation: error-box 250ms ease-in-out;
 }
 
-@keyframes error-box{
-    0%{
+@keyframes error-box {
+    0% {
         top: 0;
     }
-    100%{
+
+    100% {
         top: 3%;
     }
 }
 
-.sign-page-img{
+.sign-page-img {
     width: 55vw;
     margin-left: 5em;
 }
 
 /* ---------------------------- */
-        /* Navigation bar  */
+/* Navigation bar  */
 /* --------------------------------- */
 
-.navigation-bar{
+.navigation-bar {
     justify-content: space-around;
     align-items: center;
     background-color: var(--PURPLE);
@@ -244,15 +255,15 @@ hr.sign-line{
     padding: .8em 0;
 }
 
-.app-logo h1{
+.app-logo h1 {
     font-size: 1.8rem;
 }
 
-.username-search{
+.username-search {
     position: relative;
 }
 
-.search-bar{
+.search-bar {
     background-color: var(--WHITE);
     color: #9C9C9C;
     padding: .3em .7em;
@@ -260,7 +271,7 @@ hr.sign-line{
 }
 
 
-.search-bar input{
+.search-bar input {
     border: none;
     color: #9C9C9C;
     width: 200px;
@@ -268,11 +279,12 @@ hr.sign-line{
     font-size: .9rem;
 }
 
-.search-bar input:focus-visible{
+.search-bar input:focus-visible {
     outline: none;
 }
 
-.search-result,.inbox-search-result{
+.search-result,
+.inbox-search-result {
     width: 250px;
     overflow-y: auto;
     position: absolute;
@@ -283,56 +295,57 @@ hr.sign-line{
     text-align: center;
 }
 
-.search-result p,.inbox-search-result p{
+.search-result p,
+.inbox-search-result p {
     box-shadow: 2px 2px 10px #ccc;
-    background-color:var(--WHITE);
+    background-color: var(--WHITE);
     border-radius: 8px;
     font-weight: 600;
     margin: .2em .3em;
 }
 
-.app-sections{
+.app-sections {
     justify-content: space-around;
     align-items: center;
 }
 
-.section-box{
+.section-box {
     margin: 0 1em;
 }
 
-.section-box a{
+.section-box a {
     font-size: 1.8rem;
 }
 
-.section-box a i{
+.section-box a i {
     color: var(--WHITE);
 }
 
-.section-box a i:hover{
+.section-box a i:hover {
     color: #edebeb;
 }
 
 
 
 /* ------------------------------- */
-        /* home section  */
+/* home section  */
 /* ------------------------------- */
 
-.post-container{
+.post-container {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 3.5em 0;
 }
 
-.username-profile{
+.username-profile {
     align-items: center;
     margin-bottom: .5em;
     border-bottom: 1.4px solid #dad9d9;
 }
 
 
-.username-profile .other-user-name h3{
+.username-profile .other-user-name h3 {
     font-weight: 400;
     font-size: 1rem;
 }
@@ -340,17 +353,17 @@ hr.sign-line{
 
 
 /* ------------------------------- */
-        /* chat section  */
+/* chat section  */
 /* ------------------------------- */
 
-.container{
+.container {
     max-width: 955px;
     margin: 2em auto 0;
     height: 72vh;
 }
 
-.searchUser{
-    flex:.36;
+.searchUser {
+    flex: .36;
     border: 1px solid #dad9d9;
     display: flex;
     flex-direction: column;
@@ -361,19 +374,19 @@ hr.sign-line{
     position: relative;
 }
 
-.searchUser .user-search{
+.searchUser .user-search {
     margin-top: .6em;
 }
 
 
-.user-brief{
+.user-brief {
     cursor: pointer;
     padding: .2em 1.4em;
     margin-top: .5em;
     position: relative;
 }
 
-.user-brief::after{
+.user-brief::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -383,28 +396,28 @@ hr.sign-line{
     height: 1px;
 }
 
-.your-user-name{
+.your-user-name {
     width: 100%;
     text-align: center;
-    border-bottom:1px solid  #dad9d9;
+    border-bottom: 1px solid #dad9d9;
     margin-bottom: .3em;
     padding-block: .5em;
 }
 
-.your-user-name h2{
+.your-user-name h2 {
     font-size: 1.3rem;
     font-weight: 700;
     opacity: .9;
 }
 
-.user-search{
+.user-search {
     width: 100%;
     padding-bottom: 1em;
-    border-bottom:1px solid  #dad9d9;
+    border-bottom: 1px solid #dad9d9;
     text-align: center;
 }
 
-.inbox-search-result{
+.inbox-search-result {
     width: 170px;
     left: 48%;
     transform: translateX(-50%);
@@ -412,34 +425,36 @@ hr.sign-line{
 
 
 
-.send-message-design{
+.send-message-design {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
 }
 
-.inbox-img{
+.inbox-img {
     width: 350px;
 }
-.send-message-design h2{
+
+.send-message-design h2 {
     font-weight: 600;
 }
 
-.o-user-profile img{
+.o-user-profile img {
     width: 36px;
     margin-right: .4em;
 }
 
-.o-user-name span{
+.o-user-name span {
     font-size: 1.15rem;
 }
-.chat-search-bar{
+
+.chat-search-bar {
     color: #797979;
     position: relative;
 }
 
-.chat-search-bar input{
+.chat-search-bar input {
     color: #797979;
     border: none;
     background-color: inherit;
@@ -447,28 +462,29 @@ hr.sign-line{
     width: 45%;
 }
 
-.chat-search-bar input:focus-visible,.message-bar input:focus-visible{
+.chat-search-bar input:focus-visible,
+.message-bar input:focus-visible {
     outline: none;
 }
 
-.chat-search-bar::before{
+.chat-search-bar::before {
     content: '';
     position: absolute;
     top: 28px;
     left: 40%;
-    transform:translateX(-40%);
+    transform: translateX(-40%);
     border-bottom: 1px solid #797979;
     width: 55%;
 }
 
-.previous-talked-users{
+.previous-talked-users {
     overflow-y: auto;
     width: 100%;
     padding: .5em .4em;
 }
 
 /* ----------------------------------------- */
-.chat-section{
+.chat-section {
     border: 1px solid #dad9d9;
     flex: 1;
     position: relative;
@@ -477,26 +493,27 @@ hr.sign-line{
 }
 
 
-.profile img{
+.profile img {
     border-radius: 50%;
     width: 28px;
     margin-right: .5em;
 }
 
-.other-users-brief-details{
-    border-bottom:1px solid  #dad9d9;
+.other-users-brief-details {
+    border-bottom: 1px solid #dad9d9;
     align-items: center;
     justify-content: center;
     padding: .5em 3em;
 }
 
-.chat-view{
+.chat-view {
     height: 51.3vh;
     padding: .8em 1em;
     overflow-y: auto;
 }
 
-.user-messages,.my-messages{
+.user-messages,
+.my-messages {
     display: inline;
     clear: both;
     padding: .2em .6em;
@@ -506,18 +523,21 @@ hr.sign-line{
     margin-bottom: .5em;
 }
 
-.user-messages span,.my-messages span{
+.user-messages span,
+.my-messages span {
     color: #282629;
 }
-.user-messages{
-    float: left;   
+
+.user-messages {
+    float: left;
 }
 
-.my-messages{
-    float:right;
+.my-messages {
+    float: right;
     background-color: #DDDDDD;
 }
-.send-message{
+
+.send-message {
     width: 100%;
     padding: 0 .4em;
     position: absolute;
@@ -526,31 +546,32 @@ hr.sign-line{
 }
 
 
-.message-bar{
+.message-bar {
     width: 80%;
     border: 2px solid #797979;
     border-radius: 12px;
     padding: 0 1em;
 }
 
-.message-bar input{
+.message-bar input {
     width: 100%;
     padding: .7em 0;
     border: none;
     border-radius: 12px;
 }
 
-.send-btn{
+.send-btn {
     margin-left: .5em;
 }
 
-.send-btn input{
+.send-btn input {
     color: var(--PURPLE);
     background-color: transparent;
     border-radius: 12px;
 }
 
-.send-btn input,.post-btn input{
+.send-btn input,
+.post-btn input {
     padding: .7em 1.5em;
     border: 2px solid var(--PURPLE);
     font-weight: 600;
@@ -558,32 +579,32 @@ hr.sign-line{
     transition: background 250ms ease-in;
 }
 
-.send-btn input:hover{
+.send-btn input:hover {
     color: var(--WHITE);
     background-color: var(--PURPLE);
 }
 
 /* -------------------------------- */
-    /* create post section  */
+/* create post section  */
 /* -------------------------------- */
 
-.create-post-box{
+.create-post-box {
     height: 72vh;
     justify-content: center;
     align-items: center;
 }
 
-.create-post-title{
+.create-post-title {
     text-align: center;
     margin-top: 2em;
 }
 
-.create-post-title h1{
-    color: hsl(2, 0%,25%);
+.create-post-title h1 {
+    color: hsl(2, 0%, 25%);
     font-size: 2.5rem;
 }
 
-.post label{
+.post label {
     display: block;
     margin-left: .6em;
     font-size: 1.1rem;
@@ -591,12 +612,14 @@ hr.sign-line{
 }
 
 
-.title,.body-content{
+.title,
+.body-content {
     width: 600px;
-    margin:  2em 0;
+    margin: 2em 0;
 }
 
-.title input,.body-content textarea{
+.title input,
+.body-content textarea {
     width: 100%;
     padding: .8em 1.4em;
     border-radius: 12px;
@@ -608,79 +631,81 @@ hr.sign-line{
 
 
 
-.title input:focus-visible,.body-content textarea:focus-visible{
+.title input:focus-visible,
+.body-content textarea:focus-visible {
     outline: 2px solid #14171A;
     background-color: var(--WHITE);
 }
 
-.post-btn input{
+.post-btn input {
     border-radius: 10px;
     color: var(--WHITE);
     background-color: var(--PURPLE);
 }
 
-.post-btn input:hover{
+.post-btn input:hover {
     color: var(--PURPLE);
     background-color: transparent;
 }
 
 
 /* -------------------------------- */
-    /* profile section  */
+/* profile section  */
 /* -------------------------------- */
 
-.profile-brief-detail{
+.profile-brief-detail {
     align-items: center;
     padding: 2em 0 1em;
     justify-content: center;
 }
 
-.profile-pic{
+.profile-pic {
     margin-right: 2em;
 }
 
-.profile-pic img{
+.profile-pic img {
     width: 175px;
     height: 175px;
     border-radius: 50%;
 }
 
-.user-text-details{
+.user-text-details {
     margin-bottom: 4.3em;
 }
 
-.username h2{
+.username h2 {
     font-size: 2.5rem;
     font-weight: 500;
 }
 
-.following-post-follower-count{
+.following-post-follower-count {
     color: #282629;
     font-weight: 600;
     margin-top: .6em;
 }
 
-.following-post-follower-count span ,.following-post-follower-count a{
+.following-post-follower-count span,
+.following-post-follower-count a {
     margin-left: .2em;
     margin-right: 2em;
 }
 
 
-hr.profile-line{
+hr.profile-line {
     border: none;
     border-top: 1px solid #97aaba;
     width: 80%;
 }
 
 
-.posts{
+.posts {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.post-box{
+.post-box {
     width: 400px;
     text-align: center;
     border: 1.3px solid #dad9d9;
@@ -692,49 +717,51 @@ hr.profile-line{
     position: relative;
 }
 
-.like-btn{
+.like-btn {
     font-size: 1.4rem;
     cursor: pointer;
     color: hsl(0, 100%, 60%);
 }
-.post-likes span{
+
+.post-likes span {
     font-size: 1.2rem;
     margin-left: .3em;
 }
 
 
-.post-box.other-user-post-box{
+.post-box.other-user-post-box {
     padding: 1em 1.2em;
 }
 
-.post-title,.post-body-content{
+.post-title,
+.post-body-content {
     /* background-color: var(--WHITE); */
     border-radius: 12px;
 }
 
-.post-title{
+.post-title {
     margin-bottom: .6em;
     padding: .2em 0;
 }
 
-.post-body-content{
+.post-body-content {
     padding: .5em .6em;
 }
 
-.post-heading{
+.post-heading {
     margin-bottom: 2em;
     position: relative;
 }
 
-.post-heading::before{
+.post-heading::before {
     content: '';
     position: absolute;
-    top:-9.8px;
+    top: -9.8px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #808080;
-    width:90px;
-    height: 1.5px;   
+    width: 90px;
+    height: 1.5px;
 }
 
 .post-heading h3 {
@@ -743,17 +770,17 @@ hr.profile-line{
     font-weight: 600;
 }
 
-.post-setting{
+.post-setting {
     align-self: end;
     position: relative;
 }
 
-.post-setting span{
+.post-setting span {
     font-weight: 600;
     cursor: pointer;
 }
 
-.setting-option{
+.setting-option {
     position: absolute;
     margin: 0 1.5em;
     width: 100px;
@@ -763,59 +790,61 @@ hr.profile-line{
     font-weight: 600;
 }
 
-.setting-option a{
+.setting-option a {
     color: hsl(0, 100%, 50%);
 }
 
 /* ---------------------------------- */
- /* follower and following section  */
+/* follower and following section  */
 /* ---------------------------------- */
 
-.f-profile-pic{
+.f-profile-pic {
     text-align: center;
     padding: 2em 0 1em;
 }
 
-.f-profile-pic img{
+.f-profile-pic img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
 }
 
-.show-following-followers{
+.show-following-followers {
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.user-profile img{
+.user-profile img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
 }
 
 
-.followings-title,.followers-title{
+.followings-title,
+.followers-title {
     border: 2px solid #cbd6df;
 }
 
-.followers-title{
-    border-top-left-radius: 12px ;
+.followers-title {
+    border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
     border-right: none;
 }
 
-.followings-title{
-   
-    border-top-right-radius: 12px ;
+.followings-title {
+
+    border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
 }
 
-.followers-title h4,.followings-title h4{
+.followers-title h4,
+.followings-title h4 {
     padding: .5em 6em;
 }
 
-.followers-following-content{
+.followers-following-content {
     border: 2px solid #cbd6df;
     margin-top: 1em;
     border-top-left-radius: 12px;
@@ -826,21 +855,23 @@ hr.profile-line{
     overflow-y: auto;
 }
 
-.user-brief-detail{
+.user-brief-detail {
     justify-content: space-between;
     border-bottom: 1px solid #cbd6df;
     margin-top: 1em;
 }
 
-.user-profile-and-name .user-name{
+.user-profile-and-name .user-name {
     margin-left: 1em;
 }
 
-.follow-unfollow-btn,.message-btn{
+.follow-unfollow-btn,
+.message-btn {
     align-self: center;
 }
 
-.follow-unfollow-btn input,.message-btn a{
+.follow-unfollow-btn input,
+.message-btn a {
     cursor: pointer;
     padding: .6em 1.2em;
     border: none;
@@ -849,26 +880,29 @@ hr.profile-line{
     transition: background 200ms ease-in;
 }
 
-.follow-btn-hover,.follow-btn,.following-btn{
+.follow-btn-hover,
+.follow-btn,
+.following-btn {
     outline: 2px solid var(--PURPLE);
 }
-.follow-btn-hover{
+
+.follow-btn-hover {
     color: var(--WHITE);
-    background-color: hsl(243, 100%, 64%); 
+    background-color: hsl(243, 100%, 64%);
     outline-color: hsl(243, 100%, 64%);
 }
 
-.follow-btn{
+.follow-btn {
     color: var(--WHITE);
     background-color: var(--PURPLE);
 }
 
-.following-btn{
+.following-btn {
     color: var(--PURPLE);
-    background-color: transparent;  
+    background-color: transparent;
 }
 
-.unfollow-btn{
+.unfollow-btn {
     color: red;
     background-color: transparent;
     outline: 2px solid red;
@@ -877,12 +911,73 @@ hr.profile-line{
 
 /* User-profile Section  */
 
-.username-message-followBtn{
+.username-message-followBtn {
     gap: 1.4em;
 }
 
-.message-btn a{
+.message-btn a {
     background-color: transparent;
     outline: 2px solid var(--HORIZONTAL-LINE);
     padding: .3em 1.2em;
+}
+
+/* Set Username section  */
+#set-username {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../images/sign-page-bg-removebg-preview.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.set-username-container {
+    background-color: var(--WHITE);
+    box-shadow: 2px 4px 8px #ccc;
+    border-radius: 30px;
+    width: 200px;
+    padding: 2em;
+    justify-content: space-between;
+}
+
+.set-username-container .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 404 page section  */
+.wrong-route-container {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrong-route-container h2 {
+    font-size: 2rem;
+    opacity: .8;
+}
+
+.wrong-route-req-code {
+    height: 290px;
+}
+
+.wrong-route-req-code span {
+    font-size: 16rem;
+    font-weight: bold;
+}
+
+.wrong-route-req-code span {
+    color: var(--PURPLE);
+}
+
+.zero-num {
+    color: rgb(141, 140, 140) !important;
 }
