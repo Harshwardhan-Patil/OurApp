@@ -4,9 +4,8 @@ const passport = require("passport");
 const passportLocal = require("passport-local");
 const passportLocalMongoose = require("passport-local-mongoose");
 
-const User = require('../models/User');
-const Post = require('../models/Post');
-
+const User = require("../models/User");
+const Post = require("../models/Post");
 
 /**
  * Render Sign Up page
@@ -46,9 +45,13 @@ function reLogin(req, res) {
 
 //redirect to the home page
 function redirect_home_page(req, res) {
-  res.redirect("/");
+  req.session.passport.user.username
+    ? res.redirect("/")
+    : res.render("setUsername", {
+        errorMessage: "",
+        showErrorOrNot: "disappear",
+      });
 }
-
 
 /**
  * Register the new users
@@ -59,7 +62,7 @@ function redirect_home_page(req, res) {
 async function user_register(req, res) {
   const query_1 = User.where({ username: req.body.username });
   const usernameThatExist = await query_1.findOne();
-  
+
   const query_2 = User.where({ email: req.body.email });
   const emailThatExist = await query_2.findOne();
 
@@ -118,6 +121,34 @@ function user_login(req, res) {
   });
 }
 
+/**
+ * Set the username
+ * @route /setUsername - POST Request
+ * @param {Object} req - HTTP Request
+ * @param {Object} res - HTTP Response
+ */
+async function setUsername(req, res) {
+  try {
+    const { username } = req.body;
+
+    const query_1 = User.where({ username });
+    const isUsernamePresent = await query_1.findOne();
+    if (isUsernamePresent) {
+      res.render("setUsername", {
+        errorMessage: "Username is taken.Try another",
+        showErrorOrNot: "appear",
+      });
+    } else {
+      const user = await User.findByIdAndUpdate(req.session.passport.user.id, {
+        $set: { username },
+      });
+      res.redirect("/");
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 module.exports = {
   signUp,
   login,
@@ -125,4 +156,5 @@ module.exports = {
   user_register,
   user_login,
   reLogin,
+  setUsername,
 };

@@ -22,6 +22,7 @@ const Message = require("../models/Messages");
 async function home_page(req, res) {
   if (req.isAuthenticated()) {
     try {
+      console.log(req.session);
       const _id = req.session.passport.user.id;
       const user = await User.findById({ _id });
       const { following } = user;
@@ -31,13 +32,15 @@ async function home_page(req, res) {
         const followingPost = await Post.find({ username: following[i] }).sort({
           createdAt: -1,
         });
-        postLikeClass = followingPost.map((post)=>{
-          return post.likes.includes(_id) ? "fa-solid" : "fa-regular"
+        postLikeClass = followingPost.map((post) => {
+          return post.likes.includes(_id) ? "fa-solid" : "fa-regular";
         });
         followingPosts.push(followingPost);
       }
 
-      res.status(200).render("home", { posts: followingPosts || null ,postLikeClass});
+      res
+        .status(200)
+        .render("home", { posts: followingPosts || null, postLikeClass });
     } catch (error) {}
   } else {
     res.redirect("/login");
@@ -191,9 +194,9 @@ async function profile(req, res) {
 
     const posts = await Post.find({ userId: user_id }).sort({ createdAt: -1 });
 
-    const postLikeClass = posts.map((post)=>{
-      return post.likes.includes(user_id) ? "fa-solid" : "fa-regular"
-    })
+    const postLikeClass = posts.map((post) => {
+      return post.likes.includes(user_id) ? "fa-solid" : "fa-regular";
+    });
 
     const { username, followers, following } = user;
 
@@ -202,7 +205,7 @@ async function profile(req, res) {
       followersCount: followers.length,
       followingCount: following.length,
       posts,
-      postLikeClass
+      postLikeClass,
     });
   } catch (error) {
     console.error(error);
@@ -402,9 +405,9 @@ async function get_users_profile(req, res) {
     const { _id, username, followers, following } = user;
     const posts = await Post.find({ userId: _id }).sort({ createdAt: -1 });
 
-    const postLikeClass = posts.map((post)=>{
-      return post.likes.includes(_id) ? "fa-solid" : "fa-regular"
-    })
+    const postLikeClass = posts.map((post) => {
+      return post.likes.includes(_id) ? "fa-solid" : "fa-regular";
+    });
 
     const followingUI = {
       value: "Following",
@@ -426,7 +429,7 @@ async function get_users_profile(req, res) {
       followingCount: following.length,
       followOrNot,
       posts,
-      postLikeClass
+      postLikeClass,
     });
   } catch (error) {
     console.error(error);
@@ -484,7 +487,6 @@ async function unfollow_users(req, res) {
   follow_unfollow_users(req, res, "$pull");
 }
 
-
 /**
  * Handle the like and unlike of the posts
  * @param {Object} req - HTTP Request
@@ -514,7 +516,7 @@ async function like_unlike_Post(req, res, pushOrPull) {
 async function likePost(req, res) {
   const isLiked = await Post.findById(req.body.like);
   isLiked.likes.includes(req.session.passport.user.id)
-    ? res.status(200).send({likeCount:isLiked.likes.length})
+    ? res.status(200).send({ likeCount: isLiked.likes.length })
     : like_unlike_Post(req, res, "$push");
 }
 
